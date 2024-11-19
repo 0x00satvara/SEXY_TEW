@@ -42,6 +42,7 @@ class MEM {
 			
 			for (int i = 0; i < size / 4; i++) {
 				if (!ReadProcessMemory(hTEW, (LPVOID)address, &address, sizeof(DWORD_PTR), NULL)) {
+					CloseHandle(hTEW);
 					std::cout << RED << "Make sure that you are in game\n" << RESET;
 					std::cin.get();
 					exit(EXIT_FAILURE);
@@ -50,9 +51,8 @@ class MEM {
 			}
 			return (address);
 		}
-		BOOL WPM(DWORD_PTR address, int value) noexcept {
+		void WPM(DWORD_PTR address, int value) noexcept {
 			WriteProcessMemory(hTEW, (LPVOID)address, &value, sizeof(int), NULL);
-			return (true);
 		}
 		DWORD_PTR GetBaseAddress(void) {
 			// note that number of bytes needed to fit all TEW 64bit modules in lphModule is 848
