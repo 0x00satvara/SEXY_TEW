@@ -24,9 +24,9 @@ void	success(void) {
 
 int main(void) {
 
+	print();
 	MEM mem { L"EvilWithin.exe" };
 	DWORD_PTR ToWrite;
-	print();
 
 	DWORD_PTR BaseAddress = mem.GetBaseAddress();
 	BaseAddress += LocalPlayer;

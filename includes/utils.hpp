@@ -25,6 +25,11 @@ class MEM {
 					break;
 				}
 			}
+			if (!hTEW) {
+				std::cout << RED << "Make sure The evil within is launched\n" << RESET;
+				std::cin.get();
+				exit(EXIT_FAILURE);
+			}
 			if (hSnap)
 				CloseHandle(hSnap);
 		}
@@ -36,7 +41,11 @@ class MEM {
 			// that contains = the value we want to write on E.G pistol ammo etc...
 			
 			for (int i = 0; i < size / 4; i++) {
-				ReadProcessMemory(hTEW, (LPVOID)address, &address, sizeof(DWORD_PTR), NULL);
+				if (!ReadProcessMemory(hTEW, (LPVOID)address, &address, sizeof(DWORD_PTR), NULL)) {
+					std::cout << RED << "Make sure that you are in game\n" << RESET;
+					std::cin.get();
+					exit(EXIT_FAILURE);
+				}
 				address += Target[i];
 			}
 			return (address);
