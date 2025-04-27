@@ -18,9 +18,12 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Mem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="includes\utils.hpp">
+    <ClInclude Include="includes\MEM.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="includes\offsets.hpp">

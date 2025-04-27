@@ -134,11 +134,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Mem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes\colors.hpp" />
     <ClInclude Include="includes\offsets.hpp" />
-    <ClInclude Include="includes\utils.hpp" />
+    <ClInclude Include="includes\MEM.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
